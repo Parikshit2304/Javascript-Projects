@@ -115,7 +115,7 @@ if(appendHistory){
     }).then((response)=>response.json()).then((data)=>{
         
         
-        document.querySelector(".results .resultData").remove
+        document.querySelector(".results .resultData").remove();
     
 let responseData = jsonEscape(data.candidates[0].content.parts[0].text) ;  
 

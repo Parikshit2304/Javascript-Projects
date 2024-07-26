@@ -264,7 +264,7 @@ ul{
 
 }
 
-.chatWindow .chatContent .results::-webkit-scrollbar{
+.chatWindow .chatContent .results .resultResponse p::-webkit-scrollbar{
     display: none;
     
     
