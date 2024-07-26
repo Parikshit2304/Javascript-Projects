@@ -163,9 +163,7 @@ ul{
     
 }
 
-.chatWindow::-webkit-scrollbar{
-    display: none;
-}
+
 .chatWindow .startContent{
     max-width: 100%;
     margin-top: 4rem;
@@ -264,7 +262,7 @@ ul{
 
 }
 
-.chatWindow .chatContent .results .resultResponse p::-webkit-scrollbar{
+.chatWindow  ::-webkit-scrollbar{
     display: none;
     
     
