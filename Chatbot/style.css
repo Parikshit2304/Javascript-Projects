@@ -11,7 +11,7 @@ body{
     background: #E3F2FD;
 }
 
-.chatbox-toggler{
+.chatbot-toggler{
     position: fixed;
     right: 40px;
     bottom: 35px;
@@ -26,20 +26,23 @@ body{
     background: #724ae8;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.4s ease;
 
 }
-
-.chatbox-toggler span{
+.show-chatbot .chatbot-toggler{
+    transform: rotate(90deg);
+}
+.chatbot-toggler span{
     position: absolute;
-
+ 
 }
 
-.show-chatbot .chatbox-toggler span:first-child,
-.chatbox-toggler span:last-child{
+.show-chatbot .chatbot-toggler span:first-child,
+.chatbot-toggler span:last-child{
     opacity: 0;
 
 }
-.show-chatbot .chatbox-toggler span:last-child{
+.show-chatbot .chatbot-toggler span:last-child{
     opacity: 1;
 }
 .chatbot{
@@ -53,8 +56,11 @@ body{
     background: #fff;
     overflow: hidden;
     border-radius: 20px;
+    transform-origin: bottom right;
     box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
                 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+
 }
 .show-chatbot .chatbot{
     transform: scale(1);
@@ -122,6 +128,11 @@ body{
 
 }
 
+.chatbox .chat p.error{
+    color: #721c24;
+    background: #f8d7da;
+}
+
 .chatbox .incoming p{
     color: #000;
     background: #f2f2f2;
@@ -143,6 +154,7 @@ body{
 .chat-input textarea{
     height: 55px;
     width:100%;
+    max-height:180px;
     border: none;
     outline: none;
     font-size: 0.95rem;
