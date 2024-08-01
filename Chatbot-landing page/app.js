@@ -80,6 +80,11 @@ chatInput.addEventListener("keydown",(e)=>{
     }
 
 });
+function jsonEscape(str){
+    return str.replace(new RegExp("\r?\n\n","g"),"<br>").
+    replace(new RegExp("\r?\n","g"),"<br>");
+}
+
 sendChatBtn.addEventListener("click",handleChat);
 chatbotCloseBtn.addEventListener("click", () => document.querySelector(".bot").classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.querySelector(".bot").classList.toggle("show-chatbot"));
