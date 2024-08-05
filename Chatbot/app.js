@@ -1,3 +1,5 @@
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
 const chatInput=document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 const chatbox = document.querySelector(".chatbox");
@@ -37,7 +39,9 @@ const generateResponse =(incomingChatLi) =>{
       };
 // Send POST request to API , get response
 fetch(API_URL,requestOptions).then(res => res.json()).then(data => {
-    messageElement.textContent = data.candidates[0].content.parts[0].text;
+    let content = data.candidates[0].content.parts[0].text
+    content = content.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,"");
+    messageElement.innerHTML = marked.parse(content);
 }).catch((error) =>{
     messageElement.classList.add("error");
     messageElement.textContent="Oops! Something Went wrong. Please Try Again.";
