@@ -104,7 +104,7 @@ if(appendHistory){
     results.innerHTML+=resultTitle;
     results.innerHTML+=resultData;
 
-    const AIURL= `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAYUveBlQETwOfox-EQURRrDsJdcW3xuSE`
+    const AIURL= `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR API KEY`
     
     
     fetch(AIURL,{
